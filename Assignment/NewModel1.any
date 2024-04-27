@@ -1,0 +1,163 @@
+
+
+
+
+                AnyRefNode Hamstrings_OriginPelvis  = 
+              {          
+                 sRel =   {-0.0537, -0.0976, 0.106};                    
+              };         
+              
+                AnyRefNode Hamstrings_ViaPointThigh  = 
+              {          
+                 sRel =   {-0.065, 0.16511, 0.0};                    
+              };         
+
+                AnyRefNode Hamstrings_InsertionShank  = 
+              {          
+                 sRel =   {-0.0081, 0.1047, 0.0};                    
+              };         
+
+            
+              
+              
+              
+                AnyRefNode BicepsFemorisShortHead_OriginThigh = 
+              {          
+                 sRel =   {0.005, -0.01599, 0.0}; 
+                 
+              };
+    
+               AnyRefNode BicepsFemorisShortHead_InsertionShank = 
+              {          
+                 sRel =   {-0.0101, 0.1051, 0.0}; 
+                 
+              };
+ 
+              
+              
+              
+              
+               AnyRefNode GluteusMximus_OriginPelvis = 
+              {          
+                 sRel =   {-0.0849, -0.0598, 0.106}; 
+                 
+              };
+               AnyRefNode GluteusMximus_ViaPoint1Pelvis = 
+              {          
+                 sRel =   {-0.0822, -0.1336, 0.106}; 
+                 
+              };
+               AnyRefNode GluteusMximus_ViaPoint2Pelvis = 
+              {          
+                 sRel =   {-0.07, -0.1736, 0.106}; 
+                 
+              };
+               AnyRefNode GluteusMximus_ViaPoint3Pelvis = 
+              {          
+                 sRel =   {-0.055, 0.13101, 0.0}; 
+                 
+              };
+               AnyRefNode GluteusMximus_InsertionThigh = 
+              {          
+                 sRel =   {-0.006, 0.05321, 0.0}; 
+                 
+              };
+
+              
+      
+               AnyRefNode RectusFemoris_OriginPelvis = 
+              {          
+                 sRel =   {0.0412, -0.0295, 0.106}; 
+                 
+              };
+               AnyRefNode RectusFemoris_ViaPoint1Thigh = 
+              {          
+                 sRel =   {0.0501, -0.18159, 0.0}; 
+                 
+              };
+               AnyRefNode RectusFemoris_InsertionShank = 
+              {          
+                 sRel =   {0.0601, 0.1989, 0.0}; 
+                 
+              };
+
+              
+              
+              AnyRefNode Vastii_OriginThigh = 
+              {          
+                 sRel =   {0.0048, 0.00971, 0.0}; 
+                 
+              };
+              AnyRefNode Vastii_ViaPoint1Thigh = 
+              {          
+                 sRel =   {0.0269, -0.06399, 0.0}; 
+                 
+              };
+              AnyRefNode Vastii_ViaPoint2Thigh = 
+              {          
+                 sRel =   {0.051, -0.18499, 0.0}; 
+                 
+              };
+              AnyRefNode Vastii_InsertionShank = 
+              {          
+                 sRel =   {0.061, 0.1955, 0.0}; 
+                 
+              };
+              
+              
+              
+              
+              
+              AnyRefNode Gastrocnemius_OriginThigh = 
+              {          
+                 sRel =   {0.0, -0.17779, 0.0}; 
+                 
+              };
+              
+              AnyRefNode Gastrocnemius_ViaPoint1Shank = 
+              {          
+                 sRel =   {-0.0217, 0.1289, 0.0}; 
+                 
+              };
+              
+              AnyRefNode Gastrocnemius_InsertionFoot = 
+              {          
+                 sRel =   {0.01305, 0.08937, 0.0}; 
+                 
+              };
+              
+              
+              
+              
+              AnyRefNode Soleus_OriginShank = 
+              {          
+                 sRel =   {-0.0024, 0.0243, 0.0}; 
+                 
+              };
+              AnyRefNode Soleus_InsertionFoot = 
+              {          
+                 sRel =   {0.01305, 0.08937, 0.0}; 
+                 
+              };
+
+              
+              
+              
+              
+              AnyRefNode TibialisAnterior_OriginShank = 
+              {          
+                 sRel =   {0.0179, 0.0152, 0.0}; 
+                 
+              };
+              AnyRefNode TibialisAnterior_ViaPoint1Shank = 
+              {          
+                 sRel =   {0.0329, -0.2175, 0.0}; 
+                 
+              };
+              AnyRefNode TibialisAnterior_InsertionFoot = 
+              {          
+                 sRel =   {-0.00015, -0.02283, 0.0}; 
+                 
+              };
+
+              

@@ -1,0 +1,42 @@
+AnyFolder Drivers = {
+// #include "InputData_Baseline.any" 
+  //#include "InputData.any" 
+  
+  AnyKinEqInterPolDriver HipDriver = 
+  {
+    Type = Bspline;
+    BsplineOrder = 4;
+    T = {0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0};
+    Data = {{-pi/2, -(pi/2)*0.9, -(pi/2)*0.8, -(pi/2)*0.7, -(pi/2)*0.6, -(pi/2)*0.5, -(pi/2)*0.4, -(pi/2)*0.3, -(pi/2)*0.2, -(pi/2)*0.1, 0.0}};
+    AnyRevoluteJoint &HipJoint_Driver = Main.MyModel.Joints.HipJoint;
+  };
+
+  
+  
+  AnyKinEqInterPolDriver KneeDriver = 
+  {
+    Type = Bspline;
+    BsplineOrder = 4;
+    T = {0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0};
+    Data ={{-pi/2, -(pi/2)*0.9, -(pi/2)*0.8, -(pi/2)*0.7, -(pi/2)*0.6, -(pi/2)*0.5, -(pi/2)*0.4, -(pi/2)*0.3, -(pi/2)*0.2, -(pi/2)*0.1, 0.0}};
+
+    AnyRevoluteJoint &KneeJoint_Driver = Main.MyModel.Joints.KneeJoint;
+    };
+
+  
+      AnyKinEqSimpleDriver AnkleDriver1 = 
+  {
+    
+    DriverPos = {pi/2};
+    DriverVel =  {0};
+    Reaction.Type = {Off};
+    
+    AnyKinMeasure &FootJoint_Driver = Main.MyModel.Joints.FootJoint;
+  };
+
+
+
+
+  
+};
+

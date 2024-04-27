@@ -1,0 +1,90 @@
+AnyFolder Muscles = { 
+  
+  AnyMuscleViaPoint Harmstring = 
+  {
+
+     AnyMuscleModel Hamstrings_Muscle = {
+     F0 = 2080; // Maximum force output in newtons
+     };
+     AnyRefFrame &Orig =Main.MyModel.Segments.Pelvis.Hamstrings_OriginPelvis;
+     AnyRefFrame &Via = Main.MyModel.Segments.Thigh.Hamstrings_ViaPointThigh;
+     AnyRefFrame &Insertion = Main.MyModel.Segments.Shank.Hamstrings_InsertionShank;
+  };
+   
+    AnyMuscleViaPoint Biceps_fem = 
+  {
+      AnyMuscleModel BicepsFemorisShortHead_Muscle = {
+      F0 = 400; // Maximum force output in newtons
+      };
+      AnyRefFrame &Orig = Main.MyModel.Segments.Thigh.BicepsFemorisShortHead_OriginThigh;
+      AnyRefFrame &Insertion = Main.MyModel.Segments.Shank.BicepsFemorisShortHead_InsertionShank;
+  };
+
+    AnyMuscleViaPoint Gluteus = 
+  {
+      AnyMuscleModel GluteusMaximus_Muscle = {
+      F0 = 1300; // Maximum force output in newtons
+      };
+      AnyRefFrame &Orig = Main.MyModel.Segments.Pelvis.GluteusMximus_OriginPelvis;
+      AnyRefFrame &Via1 = Main.MyModel.Segments.Pelvis.GluteusMximus_ViaPoint1Pelvis;
+      AnyRefFrame &Via2 = Main.MyModel.Segments.Pelvis.GluteusMximus_ViaPoint2Pelvis;
+      AnyRefFrame &Via3 = Main.MyModel.Segments.Pelvis.GluteusMximus_ViaPoint3Pelvis;
+      AnyRefFrame &Insertion =Main.MyModel.Segments.Thigh.GluteusMximus_InsertionThigh;
+  };
+
+
+    AnyMuscleViaPoint Rectus = 
+  {
+      AnyMuscleModel RectusFemoris_Muscle = {
+      F0 = 780; // Maximum force output in newtons
+      };
+      AnyRefFrame &Orig =Main.MyModel.Segments.Pelvis.RectusFemoris_OriginPelvis;
+      AnyRefFrame &Via1 = Main.MyModel.Segments.Thigh.RectusFemoris_ViaPoint1Thigh;
+      AnyRefFrame &Insertion =Main.MyModel.Segments.Shank.RectusFemoris_InsertionShank;
+  };
+
+   AnyMuscleViaPoint Vastii = 
+  {
+      AnyMuscleModel Vastii_Muscle = {
+      F0 = 4400; // Maximum force output in newtons
+      };
+      AnyRefFrame &Orig = Main.MyModel.Segments.Thigh.Vastii_OriginThigh;
+      AnyRefFrame &Via1 = Main.MyModel.Segments.Thigh.Vastii_ViaPoint1Thigh;
+      AnyRefFrame &Via2 = Main.MyModel.Segments.Thigh.Vastii_ViaPoint2Thigh;
+      AnyRefFrame &Insertion = Main.MyModel.Segments.Shank.Vastii_InsertionShank;
+  }; 
+
+   AnyMuscleViaPoint Gastro = 
+  {
+      AnyMuscleModel Gastrocnemius_Muscle = {
+      F0 = 1605; // Maximum force output in newtons
+      };
+      AnyRefFrame &Orig = Main.MyModel.Segments.Thigh.Gastrocnemius_OriginThigh;
+      AnyRefFrame &Via1 = Main.MyModel.Segments.Shank.Gastrocnemius_ViaPoint1Shank;
+      AnyRefFrame &Insertion = Main.MyModel.Segments.Foot.Gastrocnemius_InsertionFoot;
+
+  };
+
+  AnyMuscleViaPoint Soleus = 
+  {
+      AnyMuscleModel Soleus_Muscle = {
+      F0 = 2830; // Maximum force output in newtons
+      };
+      AnyRefFrame &Orig = Main.MyModel.Segments.Shank.Soleus_OriginShank;
+      AnyRefFrame &Insertion = Main.MyModel.Segments.Foot.Soleus_InsertionFoot;
+
+  };
+  
+  AnyMuscleViaPoint Tibialis = 
+  {
+      AnyMuscleModel TibialisAnterior_Muscle = {
+      F0 = 1605; // Maximum force output in newtons
+      };
+    
+      AnyRefFrame &Orig = Main.MyModel.Segments.Shank.TibialisAnterior_OriginShank;
+      AnyRefFrame &Via1 = Main.MyModel.Segments.Shank.TibialisAnterior_ViaPoint1Shank;
+      AnyRefFrame &Insertion =Main.MyModel.Segments.Foot.TibialisAnterior_InsertionFoot;
+  };
+      
+ };
+

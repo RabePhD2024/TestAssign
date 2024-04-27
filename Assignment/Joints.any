@@ -1,0 +1,40 @@
+AnyFolder Joints = {
+    
+  AnyStdJoint Fix = 
+  {
+    //viewKinMeasure.Visible = Off;
+    //viewJoint.Visible = Off;
+    AnyRefFrame &global = Main.MyModel.GlobalRef;
+    AnyRefFrame &PelvisCenter = Main.MyModel.Segments.Pelvis.Pelvis_CenterNode;
+  };
+
+  AnyRevoluteJoint HipJoint = 
+  {
+    //viewKinMeasure.Visible = Off;
+    //viewJoint.Visible = Off;
+     //Axis = z;
+    AnyRefFrame &HipPelvis = Main.MyModel.Segments.Pelvis.Hip_PelvisNode;
+    AnyRefFrame &HipFemur = Main.MyModel.Segments.Thigh.Hip_ThighNode;
+  };
+
+  AnyRevoluteJoint KneeJoint = 
+  {
+    //viewKinMeasure.Visible = Off;
+    //viewJoint.Visible = Off;
+    //Axis = z;
+    //Ref = 0;
+    AnyRefFrame &HipTibia = Main.MyModel.Segments.Thigh.Knee_ThigNode;
+    AnyRefFrame &ShankTibia = Main.MyModel.Segments.Shank.Knee_ShankNode;
+  };
+
+  AnyRevoluteJoint FootJoint = 
+  {
+    //viewKinMeasure.Visible = Off;
+    //viewJoint.Visible = Off;
+    //Axis = z;
+    //Axis2 = y ;
+    AnyRefFrame &ShankAnkle = Main.MyModel.Segments.Shank.Ankle_ShankNode;
+    AnyRefFrame &FootAnkle =Main.MyModel.Segments.Foot.Ankle_FootNode ;
+  };
+};
+

@@ -1,0 +1,313 @@
+// Todo: Write a small description of your model here
+
+Main = {
+
+  // The actual body model goes in this folder
+  AnyFolder MyModel = {
+   
+    // Global Reference Frame
+    AnyFixedRefFrame GlobalRef = {
+
+      // Todo: Add points for grounding of the model here
+
+    };
+    
+AnyFolder Segments = {
+
+   AnySeg Pelvis = 
+      {      
+
+        Mass = 10.65;
+        Jii = {0.0221 , 0.01  , 0.0221};
+        
+             AnyRefNode Pelvis_CenterNode = 
+              {          
+                 sRel =  {0.0, 0.0, 0.0};                    
+              };
+
+        
+              AnyRefNode Hip_PelvisNode = 
+              {          
+                 sRel =  {0.0, -0.0976, 0.106};                    
+              };
+
+              
+              // ----------Pelvis Muscles Coordinate:-------------
+              AnyRefNode Hamstrings_OriginPelvis  = 
+              {          
+                 sRel =   {-0.0537, -0.0976, 0.106};                    
+              };         
+              
+              
+              AnyRefNode GluteusMximus_OriginPelvis = 
+              {          
+                 sRel =   {-0.0849, -0.0598, 0.106}; 
+                 
+              };
+
+              
+               AnyRefNode GluteusMximus_ViaPoint1Pelvis = 
+              {          
+                 sRel =   {-0.0822, -0.1336, 0.106}; 
+                 
+              };
+               AnyRefNode GluteusMximus_ViaPoint2Pelvis = 
+              {          
+                 sRel =   {-0.07, -0.1736, 0.106}; 
+                 
+              };
+               AnyRefNode GluteusMximus_ViaPoint3Pelvis = 
+              {          
+                 sRel =   {-0.055, 0.13101, 0.0}; 
+                 
+              };
+
+              
+              AnyRefNode RectusFemoris_OriginPelvis = 
+              {          
+                 sRel =   {0.0412, -0.0295, 0.106}; 
+                 
+              };
+
+              
+              // --------------------------------------------------
+              
+        AnyDrawSeg drwpelvis = {RGB= {1, 0, 0};}; 
+        
+    };
+
+
+  AnySeg Thigh = 
+      { Mass = 7.5;
+        Jii = {0.139  , 0.02 , 0.139};
+        //r0= {-0.3 , -0.35 , 0.0};
+
+             AnyRefNode Hip_ThighNode = 
+             {          
+                sRel =  {0.0, 0.19511, 0.0};                    
+             };
+
+        
+        
+              AnyRefNode Knee_ThigNode = 
+              {          
+                 sRel = {0.0, -0.2616, 0.0};                    
+              };
+
+              
+               // ----------Thigh Muscles Coordinate:-------------
+
+              AnyRefNode Hamstrings_ViaPointThigh  = 
+              {          
+                 sRel =   {-0.065, 0.16511, 0.0}; 
+                 
+              };
+              
+              
+               AnyRefNode BicepsFemorisShortHead_OriginThigh = 
+              {          
+                 sRel =   {0.005, -0.01599, 0.0}; 
+                 
+              };
+              
+              AnyRefNode GluteusMximus_InsertionThigh = 
+              {          
+                 sRel =   {-0.006, 0.05321, 0.0}; 
+                 
+              };
+
+               AnyRefNode RectusFemoris_ViaPoint1Thigh = 
+              {          
+                 sRel =   {0.0501, -0.18159, 0.0}; 
+                 
+              };
+              
+              AnyRefNode Vastii_OriginThigh = 
+              {          
+                 sRel =   {0.0048, 0.00971, 0.0}; 
+                 
+              };
+              AnyRefNode Vastii_ViaPoint1Thigh = 
+              {          
+                 sRel =   {0.0269, -0.06399, 0.0}; 
+                 
+              };
+              AnyRefNode Vastii_ViaPoint2Thigh = 
+              {          
+                 sRel =   {0.051, -0.18499, 0.0}; 
+                 
+              };
+
+              
+              AnyRefNode Gastrocnemius_OriginThigh = 
+              {          
+                 sRel =   {0.0, -0.17779, 0.0}; 
+                 
+              };
+
+           // --------------------------------------------------
+
+
+
+        AnyDrawSeg drwThigh = {}; 
+ };
+
+       AnySeg Shank = 
+      {      
+        
+        Mass = 3.45;
+        Jii = {0.063 , 0.004 , 0.063};
+       // r0= {-0.3 , -0.75 , 0.0};
+
+       
+             AnyRefNode Knee_ShankNode = 
+              {          
+                 sRel =  {0.0, 0.1776, 0.0};                    
+              };
+
+              AnyRefNode Ankle_ShankNode = 
+              {          
+                 sRel = {0.0, -0.2314, 0.0};                    
+              };
+
+              
+               // ----------Shank Muscles Coordinate:-------------
+
+              
+              AnyRefNode Hamstrings_InsertionShank  = 
+              {          
+                 sRel =   {-0.0081, 0.1047, 0.0}; 
+                 
+              };
+           
+               AnyRefNode BicepsFemorisShortHead_InsertionShank = 
+              {          
+                 sRel =   {-0.0101, 0.1051, 0.0}; 
+                 
+              };
+      
+               AnyRefNode RectusFemoris_InsertionShank = 
+              {          
+                 sRel =   {0.0601, 0.1989, 0.0}; 
+                 
+              };
+
+            
+              AnyRefNode Vastii_InsertionShank = 
+              {          
+                 sRel =   {0.061, 0.1955, 0.0}; 
+                 
+              };
+            
+              
+              AnyRefNode Gastrocnemius_ViaPoint1Shank = 
+              {          
+                 sRel =   {-0.0217, 0.1289, 0.0}; 
+                 
+              };
+             
+              
+              AnyRefNode Soleus_OriginShank = 
+              {          
+                 sRel =   {-0.0024, 0.0243, 0.0}; 
+                 
+              };
+              
+              AnyRefNode TibialisAnterior_OriginShank = 
+              {          
+                 sRel =   {0.0179, 0.0152, 0.0}; 
+                 
+              };
+              AnyRefNode TibialisAnterior_ViaPoint1Shank = 
+              {          
+                 sRel =   {0.0329, -0.2175, 0.0}; 
+                 
+              };
+              
+              // --------------------------------------------------
+              
+              
+              
+        AnyDrawSeg drwShank = {}; 
+    };
+
+
+     AnySeg Foot = 
+      {      
+        
+        Mass = 1.05;
+        Jii = {0.0054  , 0.0007 , 0.005};
+        //r0= {-0.3 , -0.90 , 0.1};
+
+              AnyRefNode Ankle_FootNode = 
+              {          
+                 sRel =  {0.024, 0.045, 0.0};   
+               AnyRefNode Tip = 
+             {
+               sRel = {0.0, -0.14, 0.0};
+              };
+
+              };
+              
+              
+              // ----------Foot Muscles Coordinate:-------------
+              
+              
+                            
+              AnyRefNode Gastrocnemius_InsertionFoot = 
+              {          
+                 sRel =   {0.01305, 0.08937, 0.0}; 
+                 
+              };
+              
+                                         
+              AnyRefNode Soleus_InsertionFoot = 
+              {          
+                 sRel =   {0.01305, 0.08937, 0.0}; 
+                 
+              };
+    
+              
+              AnyRefNode TibialisAnterior_InsertionFoot = 
+              {          
+                 sRel =   {-0.00015, -0.02283, 0.0}; 
+                 
+              };
+
+            // --------------------------------------------------
+
+
+
+
+
+        AnyDrawSeg drwFoot = {}; 
+    };
+
+};
+
+#include "Joints.any"
+#include "Drivers.any"
+#include "Muscles.any"
+
+
+
+
+
+};
+  
+  // The study: Operations to be performed on the model
+  AnyBodyStudy MyStudy = {
+    AnyFolder &Model = .MyModel;
+    Gravity = {0.0, -9.81, 0.0};
+    AnyOutputFile OutputData = {
+    FileName = "Output.txt";
+    
+    SepSign = " ";
+    
+    AnyFloat SegmentPos = Main.MyModel.Segments.Foot.Ankle_FootNode.Tip.r;
+    AnyFloat SegmentV = Main.MyModel.Segments.Foot.Ankle_FootNode.Tip.rDot;
+ };
+
+  };
+
+};
