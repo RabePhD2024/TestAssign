@@ -242,12 +242,14 @@ AnyFolder Segments = {
               AnyRefNode Ankle_FootNode = 
               {          
                  sRel =  {0.024, 0.045, 0.0};   
-               AnyRefNode Tip = 
+              };
+                 
+              AnyRefNode Tip = 
              {
                sRel = {0.0, -0.14, 0.0};
               };
 
-              };
+              
               
               
               // ----------Foot Muscles Coordinate:-------------
@@ -304,8 +306,8 @@ AnyFolder Segments = {
     
     SepSign = " ";
     
-    AnyFloat SegmentPos = Main.MyModel.Segments.Foot.Ankle_FootNode.Tip.r;
-    AnyFloat SegmentV = Main.MyModel.Segments.Foot.Ankle_FootNode.Tip.rDot;
+    AnyFloat SegmentPos = Main.MyModel.Segments.Foot.Tip.r;
+    AnyFloat SegmentV = Main.MyModel.Segments.Foot.Tip.rDot;
  };
 
   };
