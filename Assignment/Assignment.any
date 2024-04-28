@@ -297,17 +297,60 @@ AnyFolder Segments = {
 
 };
   
+// For the Macro and Console //The number of steps in the running
+
+#ifndef NOSTEPS
+#define NOSTEPS 100    
+#endif
+
+#ifndef OUTPUTFILE
+
+#define OUTPUTFILE "Assignmentoutput.anydata.h5"   // This file format can be read by Python and MATLAB
+
+#endif
+
+AnyOperationSequence RunApplication = {
+
+// This operation is the inverse dynamic analysis
+
+AnyOperation &InvAnal=Main.MyStudy.InverseDynamics;
+
+// This operation saves the output of the study to an h5 file in the Output folder
+
+AnyOperationMacro save = {
+
+MacroStr={ "classoperation Main.MyStudy.Output " + strquote("Save data") + " --file=" + strquote(OUTPUTFILE) + " --type=Deep"};
+
+};
+
+};
+
+
   // The study: Operations to be performed on the model
   AnyBodyStudy MyStudy = {
     AnyFolder &Model = .MyModel;
+    //InverseDynamics.Criterion.Type = MR_MinMaxStrict;
     Gravity = {0.0, -9.81, 0.0};
+    
+    nStep=NOSTEPS;  //with the Number of steps it will run. Look at the lines before the AnyBodyStudy Section above.
+    
     AnyOutputFile OutputData = {
     FileName = "Output.txt";
-    
     SepSign = " ";
     
-    AnyFloat SegmentPos = Main.MyModel.Segments.Foot.Tip.r;
-    AnyFloat SegmentV = Main.MyModel.Segments.Foot.Tip.rDot;
+    // The Output: The variables needed to be stored in the output file "Output.txt" for the optimal kick later in the MATLAB code.
+
+    AnyFloat SegmentPos = Main.MyModel.Segments.Foot.Tip.r;  //Foot Tip Position
+    AnyFloat SegmentV = Main.MyModel.Segments.Foot.Tip.rDot; //Foot Tip Velocity
+    AnyFloat MusclesActiv = Main.MyStudy.MaxMuscleActivity;  //The model Maximum Muscle Activity
+
+    //In case, we need the hip, knee and ankle joint angles
+        
+    //AnyFloat HipJointAngle =Main.MyModel.Joints.HipJoint.Pos;
+    // AnyFloat KneeJointAngle =Main.MyModel.Joints.KneeJoint.Pos;
+    //AnyFloat AnkleJointAngle =Main.MyModel.Joints.FootJoint.Pos;
+
+
  };
 
   };
