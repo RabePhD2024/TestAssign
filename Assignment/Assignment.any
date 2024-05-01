@@ -72,7 +72,7 @@ AnyFolder Segments = {
               
               // --------------------------------------------------
               
-        AnyDrawSeg drwpelvis = {RGB= {1, 0, 0};}; 
+        AnyDrawSeg drwpelvis = {RGB={0.95703125, 0.78515625, 0.78515625};}; 
         
     };
 
@@ -149,7 +149,7 @@ AnyFolder Segments = {
 
 
 
-        AnyDrawSeg drwThigh = {}; 
+        AnyDrawSeg drwThigh = {RGB = {1, 0.78515625, 0.78515625};}; 
  };
 
        AnySeg Shank = 
@@ -228,7 +228,7 @@ AnyFolder Segments = {
               
               
               
-        AnyDrawSeg drwShank = {}; 
+        AnyDrawSeg drwShank = {RGB = {1, 0.78515625, 0.78515625};}; 
     };
 
 
@@ -282,7 +282,7 @@ AnyFolder Segments = {
 
 
 
-        AnyDrawSeg drwFoot = {}; 
+        AnyDrawSeg drwFoot = {RGB = {1, 0.78515625, 0.78515625};}; 
     };
 
 };
@@ -290,7 +290,6 @@ AnyFolder Segments = {
 #include "Joints.any"
 #include "Drivers.any"
 #include "Muscles.any"
-
 
 
 
@@ -346,8 +345,8 @@ MacroStr={ "classoperation Main.MyStudy.Output " + strquote("Save data") + " --f
 
     //In case, we need the hip, knee and ankle joint angles
         
-    //AnyFloat HipJointAngle =Main.MyModel.Joints.HipJoint.Pos;
-    // AnyFloat KneeJointAngle =Main.MyModel.Joints.KneeJoint.Pos;
+    AnyFloat HipJointAngle =Main.MyModel.Joints.HipJoint.Pos;
+    AnyFloat KneeJointAngle =Main.MyModel.Joints.KneeJoint.Pos;
     //AnyFloat AnkleJointAngle =Main.MyModel.Joints.FootJoint.Pos;
 
 

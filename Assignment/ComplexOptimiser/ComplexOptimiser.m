@@ -1,0 +1,128 @@
+function [qOpt,fOpt, exitflag] = ComplexOptimiser(OptFun,qInit,ConFun,Options);
+
+%--- Initialising
+exitflag = 1;
+y.total = zeros(Options.m,Options.n);
+y.obj = zeros(1,Options.n);
+y.c = zeros(Options.m,1);
+y.new = zeros(Options.m,1);
+y.worst = zeros(Options.m,1);
+y.best = zeros(Options.m,1);
+y.worst_i = 0; % index of the worst case in y.total
+y.worst_i_last = 0;
+y.worst_n = 0; % number of times it has been the worst
+
+% Initial guess's 
+%y.total = 5*(rand(m,n)-0.5); % random values
+%y.total = [ -3.1 0.5 -2.3 -0.1; % fixed values
+%            0.1 -1 2 -0.5];
+y.total(:,1) = qInit;
+
+
+disp('Generating initial population');
+for i=1:Options.m
+    for j=2:Options.n
+        a = qInit(i)+Options.BoxSize(i,1);
+        b = qInit(i)+Options.BoxSize(i,2);
+        y.total(i,j) = a + (b-a).*rand();            
+    end
+end
+
+% Evaluate the object function (n-cases)
+disp('Computing the objective function for the population');
+for i1 = 1:Options.n
+    textstring = sprintf('%d out of %d',i1,Options.n);
+    disp(textstring);
+    f_tmp =OptFun((y.total(:,i1)));
+    if (ConFun ~= [])
+        [c_tmp,ceq_tmp] =ConFun((y.total(:,i1)));
+    
+        for j=length(ceq_tmp)
+            y.obj(i1) = f_tmp+Options.PenaltyFactor*ceq_tmp(j)^2;
+        end
+    else
+        y.obj(i1) = f_tmp;
+    end
+    
+ %   if i1 == 1
+ %       y.obj(i1)
+ %      pause
+ %   end
+    
+end
+
+
+disp('Starting the main optimization rutine');
+%--- the main routine
+i2 = 1;
+stop = 0;
+while ((i2 ~= Options.MaxSteps) & (stop ~= 1))
+    i2
+    y.worst_i_last = y.worst_i;
+    
+    % find the worst configuration
+    [y.worst_obj,y.worst_i] = max(y.obj);
+    if y.worst_i == y.worst_i_last
+        y.worst_n = y.worst_n + 1;
+    else
+        y.worst_n = 1;
+    end
+    y.worst = y.total(:,y.worst_i);
+    
+    % find the best configuration
+    [y.best_obj,y.best_i] = min(y.obj);
+    y.best = y.total(:,y.best_i);
+    
+    % find y.c
+    y.total(:,y.worst_i) = zeros(Options.m,1);
+    y.c = (sum(y.total,2))/(Options.n-1);
+    
+    % find y.new
+    if y.worst_n == 1
+        y.new = Options.k*(y.c - y.worst) + y.c;
+    else
+        ep = (Options.n_r / (Options.n_r + y.worst_n - 1))^((Options.n_r + y.worst_n - 1) / Options.n_r);
+        R = rand;
+        sigma = (y.c - y.best) * (1 - ep) * (2*R - 1);
+        y.new = 0.5 * (y.worst + ep * y.c + (1 - ep) * y.best) + sigma;
+    end
+    
+    f_tmp =OptFun(y.new);
+    
+    
+    if (ConFun ~= [])
+        [c_tmp,ceq_tmp] =ConFun(y.new);
+        for j=length(ceq_tmp)
+            y.obj(y.worst_i) = f_tmp+PenaltyFactor*ceq_tmp(j)^2;
+        end
+    else
+        y.obj(y.worst_i) = f_tmp;
+    end
+       
+    y.total(:,y.worst_i) = y.new;
+  
+    % Check for convergence
+    convergence.total = y.total;
+    convergence.c = sum(y.total,2)/Options.n;
+    for i3 = 1:Options.n
+        convergence.total(:,i3) = abs(convergence.total(:,i3) - convergence.c);
+    end
+    convergence.max = max(convergence.total,[],2);
+    
+    convergence.max'
+    
+    if convergence.max < Options.convergence.criteria
+        stop = 1;
+    end
+    i2 = i2 + 1;
+    
+end
+
+if stop == 0
+    disp('Error: Maximum number iterations used');
+    exitflag = 0;
+end
+
+qOpt = y.best;
+fOpt = y.obj(y.best_i);
+
