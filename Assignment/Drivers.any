@@ -6,7 +6,7 @@ AnyFolder Drivers = {
   {
     Type = Bspline;
     BsplineOrder = 4;
-    T = {0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0};
+    T = {0.0,0.01,0.02,0.07,0.1,0.2,0.25,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0};
     Data = Main.MyModel.Drivers.DriverData;
     AnyRevoluteJoint &HipJoint_Driver = Main.MyModel.Joints.HipJoint;
   };
@@ -17,7 +17,7 @@ AnyFolder Drivers = {
   {
     Type = Bspline;
     BsplineOrder = 4;
-    T = {0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0};
+    T = {0.0,0.01,0.02,0.07,0.1,0.2,0.25,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0};
     Data =Main.MyModel.Drivers.DriverData;
     AnyRevoluteJoint &KneeJoint_Driver = Main.MyModel.Joints.KneeJoint;
     };

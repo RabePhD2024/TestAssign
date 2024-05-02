@@ -1,4 +1,0 @@
-load "Assignment.any"
-operation RunApplication
-run
-exit

@@ -343,7 +343,7 @@ MacroStr={ "classoperation Main.MyStudy.Output " + strquote("Save data") + " --f
     AnyFloat SegmentV = Main.MyModel.Segments.Foot.Tip.rDot; //Foot Tip Velocity
     AnyFloat MusclesActiv = Main.MyStudy.MaxMuscleActivity;  //The model Maximum Muscle Activity
 
-    //In case, we need the hip, knee and ankle joint angles
+    //The hip, knee and ankle joint angles
         
     AnyFloat HipJointAngle =Main.MyModel.Joints.HipJoint.Pos;
     AnyFloat KneeJointAngle =Main.MyModel.Joints.KneeJoint.Pos;
